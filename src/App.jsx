@@ -31,6 +31,16 @@ function App() {
       return updatedTasks;
     });
   };
+  const updateExistingTask=(value,id)=>{
+    addTask((prevTasks) => {
+      const updatedTasks = [...prevTasks];
+      updatedTasks[id] = {
+        ...updatedTasks[id],
+        value: value,
+      };
+      return updatedTasks;
+    });
+  }
   const handleDeletion = (idx) => {
     const updatedTask = [...task];
     updatedTask.splice(idx, 1);
@@ -40,6 +50,7 @@ function App() {
     deleteTask: handleDeletion,
     verifyTask: changeVerifyStatus,
     editStatus: changeEditStatus,
+    updateTask:updateExistingTask,
   };
   return (
     <div

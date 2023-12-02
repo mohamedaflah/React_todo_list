@@ -14,6 +14,9 @@ body {
 #show {
   background-color: rgb(104, 103, 103);
 }
-#show label {
+/* #show label {
+  text-decoration: line-through;
+} */
+#show input {
   text-decoration: line-through;
 }

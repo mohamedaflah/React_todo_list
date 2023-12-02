@@ -7,6 +7,13 @@ function Lists(prop) {
   const { tasks, id } = prop;
   const [edit, setEdit] = useState(false);
 
+  const [editValue, setEditValue] = useState(tasks.value);
+  const handleInputChange = (e) => {
+    setEditValue(e.target.value);
+  };
+  const changeAgainAfterClickBtn=()=>{
+    setEdit(false)
+  }
   console.log("worisfdsafd");
   useEffect(() => {
     tasks.edit ? setEdit(true) : setEdit(false);
@@ -21,20 +28,22 @@ function Lists(prop) {
         fds
       </div> */}
       <div className="w-[70%]  flex flex-col justify-center px-2 relative">
-        {!edit && (
+        {/* {!edit && (
           <label htmlFor={id} className="absolute left-4" id={verifyStatus}>
             {tasks.value}
           </label>
-        )}
+        )} */}
 
         <input
           type="text"
           className="h-full bg-transparent outline-none text-sm"
           disabled={!edit}
+          value={edit ? editValue : tasks.value}
+          onChange={handleInputChange}
         />
       </div>
       <div className="min-w-[25%]  flex justify-between px-2 items-center ">
-        {edit ? <Button id={id} /> : <Actions id={id} />}
+        {edit ? <Button id={id} editValue={editValue} changeBtn={changeAgainAfterClickBtn}/> : <Actions id={id} />}
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 // eslint-disable-next-line react/prop-types
 function Inputs({ taskAdd }) {
@@ -8,11 +8,19 @@ function Inputs({ taskAdd }) {
     setTsk(e.target.value);
   };
   const addTsk = () => {
+    if(getTsk.trim()==""){
+      errorRef.current.classList.remove("hidden")
+      setTimeout(()=>{
+        errorRef.current.classList.add("hidden")
+      },2000)
+      return
+    }
     taskAdd(getTsk);
     setTsk("");
   };
+  const errorRef=useRef()
   return (
-    <div className="w-[100%] h-24  flex md:flex-row items-center gap-1 justify-center pt-3">
+    <div className="w-[100%] h-24  flex md:flex-row items-center gap-x--1 justify-center pt-3 flex-wrap">
       <input
         type="text"
         name=""
@@ -28,6 +36,9 @@ function Inputs({ taskAdd }) {
       >
         Add
       </button>
+      <div className="w-[70%] ">
+        <p className="text-sm text-red-400 hidden" ref={errorRef}>Please Add Task!!!</p>
+      </div>
     </div>
   );
 }
