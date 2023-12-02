@@ -43,12 +43,12 @@ function App() {
   };
   return (
     <div
-      className="container  mx-auto flex items-center justify-center flex-col "
+      className="container  mx-auto flex items-center justify-center flex-col"
       style={{ minHeight: "100vh" }}
     >
       <h1 className="text-2xl font-semibold">Todo List</h1>
       <ActionContext.Provider value={contextValue}>
-        <div className="w-[90%]  shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px] mx-auto lg:w-[40%] min-h-[60%] rounded-md">
+        <div className="w-[90%]  shadow-[rgba(4_65,_210,_0.1)_0px_9px_30px] mx-auto lg:w-[40%] min-h-[60%] rounded-md">
           <Inputs taskAdd={addTaskinState} />
           <div className="w-[100%]  min-h-[90px] flex flex-col items-center py-5 gap-4">
             {task.map((val, idx) => (
@@ -58,6 +58,7 @@ function App() {
                 id={idx}
                 deletion={handleDeletion}
                 key={val.id}
+                editStatus={val.edit}
               />
             ))}
           </div>

@@ -7,6 +7,7 @@ function Button(props) {
   const closeEditOption=()=>{
     // eslint-disable-next-line react/prop-types
     actions.editStatus(props.id)
+    
   }
   return (
     <div className=" flex">

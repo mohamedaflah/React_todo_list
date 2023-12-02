@@ -23,9 +23,9 @@ function Actions(props) {
           onClick={() => handleVerification(id)}
         />
       </span>
-      <span>
+      {/* <span>
         <FileSignature absoluteStrokeWidth className="text-xs" onClick={showEditOption} />
-      </span>
+      </span> */}
       <span>
         <Trash absoluteStrokeWidth className="text-xs" 
         onClick={handleDeletion}

@@ -6,9 +6,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-#show{
+body {
+  /* background-color: red; */
+  background-color: #f9fcff;
+  background-image: linear-gradient(147deg, #f9fcff 0%, #dee4ea 74%);
+}
+#show {
   background-color: rgb(104, 103, 103);
 }
-#show input{
+#show label {
   text-decoration: line-through;
 }
