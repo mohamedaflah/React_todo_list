@@ -10,6 +10,7 @@ function App() {
       ...task,
       { edit: false, verify: false, value: taskValue, id: Date.now() },
     ]);
+    localStorage.setItem("tasks",JSON.stringify(task))
   };
   const changeVerifyStatus = (id) => {
     addTask((prevTasks) => {
@@ -52,9 +53,10 @@ function App() {
     editStatus: changeEditStatus,
     updateTask:updateExistingTask,
   };
+  console.log('test')
   return (
     <div
-      className="container  mx-auto flex items-center justify-center flex-col"
+      className="container flex flex-col items-center justify-center mx-auto"
       style={{ minHeight: "100vh" }}
     >
       <h1 className="text-2xl font-semibold">Todo List</h1>

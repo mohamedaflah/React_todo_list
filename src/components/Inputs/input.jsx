@@ -31,13 +31,13 @@ function Inputs({ taskAdd }) {
         onChange={seTnewTask}
       />
       <button
-        className="w-[13%] h-10 text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-sm text-sm px-5  flex items-center justify-center "
+        className="mx-2 w-[13%] h-10 text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-sm text-sm px-5  flex items-center justify-center "
         onClick={addTsk}
       >
         Add
       </button>
       <div className="w-[70%] ">
-        <p className="text-sm text-red-400 hidden" ref={errorRef}>Please Add Task!!!</p>
+        <p className="hidden text-sm text-red-400" ref={errorRef}>Please Add Task!!!</p>
       </div>
     </div>
   );

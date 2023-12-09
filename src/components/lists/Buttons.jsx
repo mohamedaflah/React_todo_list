@@ -5,9 +5,12 @@ function Button(props) {
     
   const actions = useContext(ActionContext);
   const setUpdatedValue=()=>{
-    // alert(props.editValue)
+    if(props.editValue==""){
+      return
+    }
     // eslint-disable-next-line react/prop-types
     actions.updateTask(props.editValue,props.id)
+    // eslint-disable-next-line react/prop-types
     props.changeBtn()
   }
   const closeEditOption=()=>{
